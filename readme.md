@@ -1,4 +1,4 @@
 # PVA2 - Programování a vývoj aplikací
-## Cvičení 35: Git Markdown
+## Cvičení 01: Git Markdown
 
-Zadání cvičení je uvedeno v [prezentaci](https://oa-pva2-syllabus.github.io/pva2_prednasky/35_git_markdown/)
+Zadání cvičení je uvedeno v [prezentaci](https://oa-scm-syllabus.github.io/scm_prednasky/10_markdown/)
