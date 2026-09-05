@@ -21,7 +21,7 @@ jobs:
 
       - name: Spustit kontrolu zadání
         run: |
-          python scripts/check_markdown.py \
+          python .github/scripts/check_markdown.py \
             --output markdown-check-results.json \
             --summary-output markdown-check-summary.md
 
