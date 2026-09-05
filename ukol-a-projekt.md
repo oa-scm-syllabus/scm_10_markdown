@@ -6,7 +6,7 @@ V repozitáři už je připravená kostra souboru `project_readme.md` se značka
 
 ## Povinné prvky
 
-1. **Nadpisy** — H1 s názvem projektu, alespoň dvě úrovně (H2/H3) pro jednotlivé sekce.
+1. **Nadpisy** — H1 s názvem projektu, alespoň jedna další úroveň (H2 nebo H3) pro jednotlivé sekce.
 2. **Formátování textu** — v popisu projektu smysluplně použijte tučný text, kurzívu i přeškrtnutý text (např. u zastaralé funkce).
 3. **Obsah s kotvami** — seznam odkazů na sekce níže v dokumentu pomocí anchor odkazů (`[Sekce](#sekce)`).
 4. **Nečíslovaný seznam** — minimálně 4 funkce nástroje, u jedné z nich vnořený podseznam.
