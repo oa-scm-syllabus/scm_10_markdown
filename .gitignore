@@ -1,0 +1,131 @@
+/app/config/env/config.*.neon
+!/app/config/env/sample.local.neon
+!/app/config/env/dev.neon
+!/app/config/env/prod.neon
+!/app/config/env/test.neon
+
+# Assets – ignoruj vše kromě vlastního CSS a JS
+/www/assets/*
+!/www/assets/css/
+/www/assets/css/*
+!/www/assets/css/trenis.print.css
+!/www/assets/css/trenis.auth.css
+!/www/assets/css/trenis.ds-tokens.css
+!/www/assets/css/trenis.ds.css
+!/www/assets/css/interacc-dashboard.css
+!/www/assets/css/servicedesk-diagram.css
+!/www/assets/css/education-calendar.css
+!/www/assets/css/registry-management.css
+!/www/assets/css/acl-permissions.css
+!/www/assets/css/catering.css
+!/www/assets/js/
+
+# Vendor assety (Bootstrap, jQuery, select2, ikony, fonty) — výjimka ze stejného
+# důvodu jako Swagger UI níž: generuje je `npm run build` z .build/package.json
+# (viz .build/copy-vendor.mjs) a deploy je jen vyzvedne z gitu. Bez commitu by
+# aplikace na testu i produkci přišla o veškerý vzhled. Ručně tam nesahej —
+# adresář se při každém buildu maže a staví znovu.
+!/www/assets/vendor/
+
+# Swagger UI pro /api/v1/docs — výjimka z pravidla „vendor assety do gitu nepatří".
+# Projekt nemá npm ani build step, takže by se knihovna do image dostala jen z disku
+# toho, kdo image staví (přesně tahle past zasáhla www/assets/plugins/, viz #1076).
+# Dokumentace API by pak na test a produkci zůstala prázdná a nikdo by nevěděl proč.
+# Verzi drží DocsController::SWAGGER_UI_VERSION.
+!/www/assets/swagger-ui/
+
+# Storage - ignoruj vše kromě vybraných adresářů
+storage/*
+
+# Testy
+/tests/_output/*
+/tests/_temp/*
+/tests/_support/_generated/*
+
+# Build — v gitu jsou zdrojové vstupy a konfigurace Vite, mimo git jen
+# nainstalované závislosti. Dřív tu stálo `/.build/*`, takže každý nový
+# soubor v .build/ git tiše ignoroval (staré se trackují jen proto, že
+# vznikly před tím pravidlem) a přidat se dal jen přes `git add -f`.
+/.build/node_modules
+
+# Panel Outlook add-inu dodává Composer balíček `pkpci/trenis-addin` (rozbaluje ho
+# `bin/addin-rozbal.php` z `post-install-cmd`), takže se od 9/2026 necommituje. Dřív
+# se sem kopíroval ručně a stálo to tři incidenty — pokaždé se selhání projevilo až
+# po nasazení. Viz `.docs/deploy.md`.
+/www/addin/outlook/
+
+# Env
+.env
+/config/env/.env.dev
+/config/env/.env.test
+/config/env/.env.prod
+# Build-time údaje pro compose (dnes přihlášení Composeru k privátnímu repozitáři
+# add-inu). Schválně mimo `.env.{dev,test,prod}`: ty se přes `env_file:` předávají
+# do běžícího kontejneru a přes `COPY ../..` se zapékají do vrstvy image — obojí je
+# u údaje, který potřebuje jen build, zbytečné vystavení.
+/config/env/.env.build
+/.docker/runner.env
+
+# Composer
+/vendor
+
+# Node
+/node_modules
+
+# IDEs
+/nbproject
+.idea
+
+# Claude
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+/.claude/scratch/
+/.agents/
+
+#################
+## Misc
+
+tmp/
+**/uploads/*
+**/uploadsPublic/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings
+local.properties
+.loadpath
+
+
+## Eclipse configs
+
+.project
+.classpath
+.settings/
+
+
+#############
+## Windows detritus
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+
+
+
+# Superpowers brainstorming (lokální mockupy)
+.superpowers/
+.devswarm-temp/
+/.codegraph/
+
