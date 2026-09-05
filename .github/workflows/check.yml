@@ -1,0 +1,37 @@
+name: Kontrola zadání Markdown
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Spustit kontrolu zadání
+        run: |
+          python .github/scripts/check.py \
+            --output markdown-check-results.json \
+            --summary-output markdown-check-summary.md
+
+      - name: Nahrát výsledky jako artefakt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-check-results
+          path: markdown-check-results.json
+
+      - name: Zapsat shrnutí do Job Summary
+        if: always()
+        run: cat markdown-check-summary.md >> "$GITHUB_STEP_SUMMARY"
