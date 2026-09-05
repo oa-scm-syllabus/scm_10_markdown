@@ -1,0 +1,56 @@
+# Env
+.env
+
+# Composer
+/vendor
+
+# Node
+/node_modules
+
+# IDEs
+/nbproject
+.idea
+
+# Claude
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+/.claude/scratch/
+/.agents/
+
+#################
+## Misc
+
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings
+local.properties
+.loadpath
+
+
+#############
+## Windows detritus
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+
+
+
+# Superpowers brainstorming (lokální mockupy)
+.superpowers/
+.devswarm-temp/
+/.codegraph/
