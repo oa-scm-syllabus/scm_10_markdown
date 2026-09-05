@@ -1,48 +1,76 @@
-<!-- TODO 1: nahraďte tímto H1 název projektu "TaskFlow" -->
-# TODO
+# TaskFlow
 
-<!-- TODO 2: krátký popis projektu (2-3 věty) s tučným textem, kurzívou a přeškrtnutým textem -->
+**TaskFlow** je *jednoduchý* nástroj pro správu úkolů. Starší verze CLI byla ~~napsaná v Perlu~~, dnes je v Pythonu.
 
 ## Obsah
 
-<!-- TODO 3: seznam odkazů s kotvami (anchor odkazy) na sekce níže, např. [Funkce](#funkce) -->
+- [Funkce](#funkce)
+- [Instalace](#instalace)
 
 ## Funkce
 
-<!-- TODO 4: nečíslovaný seznam min. 4 funkcí nástroje, u jedné z nich vnořený podseznam -->
+- Rychlé přidávání úkolů
+  1. Přes CLI
+  2. Přes konfigurační soubor
+- Filtrování podle štítků
+- Export do CSV
+- Notifikace na e-mail
 
 ## Instalace
 
-<!-- TODO 5: číslovaný seznam min. 3 instalačních kroků -->
+1. Nainstalujte Python 3.11+
+2. Nainstalujte balíček přes `pip`
+3. Spusťte inicializaci
 
-<!-- TODO 6a: blok kódu se zvýrazněním syntaxe (bash) s instalačním příkazem -->
+```bash
+pip install taskflow-cli
+```
 
 ## Použití
 
-<!-- TODO 6b: příklad použití, alespoň jeden inline kód (např. název parametru) v textu -->
+Spusťte příkaz `taskflow add "Nový úkol"`.
 
 ## Konfigurace
 
-<!-- TODO 9: tabulka konfiguračních parametrů, min. 2 sloupce a 3 řádky -->
+| Parametr | Výchozí hodnota |
+|----------|------------------|
+| `--limit` | 50 |
+| `--format` | table |
+| `--verbose` | false |
 
 ## Ukázky a odkazy
 
-<!-- TODO 7: inline obrázek (badge/logo) a reference obrázek -->
+![TaskFlow logo](https://example.com/logo.png)
+![TaskFlow badge][badge]
 
-<!-- TODO 8: inline odkaz a reference odkaz (např. na dokumentaci) -->
+[badge]: https://example.com/badge.png
+
+Více v [dokumentaci](https://example.com/docs) nebo v [repozitáři][repo].
+
+[repo]: https://example.com/repo
 
 ## Ohlasy uživatelů
 
-<!-- TODO 10: citace (blockquote) s ukázkovou reakcí uživatele -->
+> TaskFlow mi ušetřil hodiny práce každý týden.
 
 ## Řešení častých problémů
 
-<!-- TODO 11: sbalitelný blok <details><summary>...</summary>...</details> -->
+<details>
+<summary>Nástroj nejde spustit</summary>
+
+Zkontrolujte, že máte nainstalovaný Python 3.11+.
+
+</details>
 
 ## Roadmapa
 
-<!-- TODO 12: checkbox seznam min. 3 položek, část zaškrtnutá -->
+- [x] CLI základ
+- [x] Export do CSV
+- [ ] Webové rozhraní
+- [ ] Mobilní aplikace
 
 ---
 
-<!-- TODO 14: poznámka pod čarou (footnote) u informace o verzi nebo licenci -->
+Aktuální verze je 1.2.0[^1].
+
+[^1]: Licencováno pod MIT.
