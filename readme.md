@@ -18,6 +18,13 @@ Cílem cvičení je procvičit si syntaxi GitHub Markdown na dvou navazujících
 1. Doplňte/vytvořte oba soubory (`project_readme.md`, `it_markdown_practice.md`) v tomto repozitáři.
 2. Commitněte a pushněte změny do svého GitHub repozitáře.
 
-## Automatická kontrola
+## Automatická kontrola a zpětná vazba
 
-Po každém pushi zkontroluje GitHub Actions workflow (`.github/workflows/check-markdown.yml`) strukturu obou souborů — hlídá přítomnost požadovaných markdown prvků, ne obsah/téma. Výsledek najdete v záložce **Actions** u příslušného běhu (souhrn v Job Summary, detail v JSON artefaktu `markdown-check-results`).
+Po každém pushi se vaše soubory automaticky zkontrolují (hlídá se přítomnost
+požadovaných prvků Markdownu, ne obsah ani téma). Výsledek najdete
+v **pull requestu „Feedback“** ve svém repozitáři: komentář s body za každý
+úkol, seznamem očíslovaných požadavků (splněno / nesplněno) a nápovědou,
+co chybí. Komentář se po každém dalším pushi přepíše aktuálním stavem,
+historie pokusů je v něm sbalená dole.
+
+Do téhož pull requestu můžete psát dotazy k hodnocení — vidí ho vyučující.
