@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig"
+  ],
+  "unwantedRecommendations": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "Codeium.codeium",
+    "TabNine.tabnine-vscode",
+    "Continue.continue",
+    "Supermaven.supermaven",
+    "AmazonWebServices.amazon-q-vscode",
+    "Google.geminicodeassist",
+    "Anthropic.claude-code",
+    "saoudrizwan.claude-dev",
+    "RooVeterinaryInc.roo-cline"
+  ]
+}
